@@ -33,145 +33,122 @@
 </script>
 
 <style scoped>
-.cd-card {
+.welcome-page {
+  height: 100vh; /* Fiksna visina ekrana */
+  overflow: hidden; /* Sprječava pojavu scrollbara */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #ffffff;
 }
 
-.cd-wrap {
-  padding: 28px 34px;
+.welcome-container {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
-.cd-title {
-  color: #455a1f;
-  font-size: 18px;
-  margin-bottom: 14px;
-  letter-spacing: 0.5px;
-}
-
-.cd-table :deep(th) {
-  color: #455a1f;
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  opacity: 0.9;
-}
-
-.cd-table :deep(td) {
-  font-size: 14px;
-  color: #455a1f;
-}
-
-.cd-name {
-  color: #455a1f;
-  font-weight: 600;
-}
-
-.cd-empty {
-  padding: 18px 0;
+.top {
   text-align: center;
-  color: #455a1f;
-  opacity: 0.8;
+  margin-bottom: 40px;
 }
 
-.cd-totalRow {
-  margin-top: 14px;
+.brand-title {
+  font-family: "Architects Daughter", cursive;
+  color: #455a1f;
+  font-size: 72px;
+  line-height: 1;
+  margin-top: 8px;
+}
+
+/* ZELENI PANEL – FIGMA */
+
+.panel {
+  background: #455a1f;
+  padding: 56px 72px;
+  border-radius: 48px;
+  width:100%;
+}
+
+.panel-text {
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+.panel-actions {
+  margin-top: 48px;
   display: flex;
-  justify-content: flex-end;
-  gap: 14px;
-  align-items: baseline;
-  color: #455a1f;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.cd-totalLabel {
-  color: #455a1f;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 12px;
+/* GUMBI */
+
+.btn-guest {
+  border-color: #ffffff;
+  color: #ffffff;
+  min-width: 300px;
+  height: 56px;
+  font-size: 18px;
 }
 
-.cd-totalValue {
-  color: #455a1f;
-  font-weight: 800;
-  font-size: 16px;
-}
-
-.cd-actions {
-  margin-top: 18px;
-  display: flex;
-  justify-content: flex-end;
-  gap: 12px;
-}
-
-.cd-pay,
-.cd-continue {
+.btn-register {
   background: #d8d48a;
   color: #455a1f;
-  font-weight: 800;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  font-weight: 600;
+  min-width: 300px;
+  height: 56px;
+  font-size: 18px;
 }
 
-/* MOBITEL */
+/* RESPONSIVE – TABLET */
+
+@media (max-width: 960px) {
+
+  .brand-title {
+    font-size: 52px;
+  }
+
+  .panel {
+    padding: 36px 32px;
+    border-radius: 32px;
+  }
+
+  .panel-text {
+    font-size: 20px;
+  }
+}
+
+/* RESPONSIVE – MOBITEL */
+
 @media (max-width: 600px) {
-  .cd-wrap {
-    padding: 20px 15px;
+  .welcome-container {
+  padding-top: 32px;
+  padding-bottom: 48px;
   }
 
-  .cd-table :deep(thead) {
-    display: none;
+  .brand-title {
+    font-size: 40px;
   }
 
-  .cd-table :deep(tr) {
-    display: block;
-    border-bottom: 2px solid #e9eef6;
-    padding: 10px 0;
-    position: relative;
+  .panel {
+    padding: 24px 20px;
+    border-radius: 24px;
   }
 
-  .cd-table :deep(td) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: none !important;
-    padding: 4px 0 !important;
-    text-align: right !important;
-    font-size: 13px;
-  }
-
-  .cd-table :deep(td::before) {
-    content: attr(data-label);
-    font-weight: 700;
-    font-size: 10px;
-    text-transform: uppercase;
-    color: #455a1f;
-    opacity: 0.7;
-  }
-
-  .cd-name {
-    font-size: 16px !important;
-    color: #455a1f !important;
-    margin-bottom: 4px;
-  }
-
-  .cd-table :deep(td:last-child) {
-    position: absolute;
-    top: 5px;
-    right: -10px;
-  }
-
-  .cd-totalRow {
-    justify-content: center;
+  .panel-text {
     font-size: 18px;
-    margin: 20px 0;
   }
 
-  .cd-actions {
+  .panel-actions {
     flex-direction: column;
-    width: 100%;
+    gap: 16px;
+    margin-top: 32px;
   }
 
-  .cd-pay,
-  .cd-continue {
+  .btn-register {
     width: 100%;
+    min-width: unset;
   }
 }
 </style>
