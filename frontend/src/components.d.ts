@@ -16,7 +16,6 @@ declare module 'vue' {
     DeliveryAddressDialog: typeof import('./components/DeliveryAddressDialog.vue')['default']
     GreenImagePanelLayout: typeof import('./components/GreenImagePanelLayout.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
-    ModalPageShell: typeof import('./components/ModalPageShell.vue')['default']
     PaymentDialog: typeof import('./components/PaymentDialog.vue')['default']
     ProductCardDialog: typeof import('./components/ProductCardDialog.vue')['default']
     ProductGrid: typeof import('./components/ProductGrid.vue')['default']

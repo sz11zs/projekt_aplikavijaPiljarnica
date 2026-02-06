@@ -54,8 +54,8 @@
   async function handleSubmit() {
     // Određujemo URL i body ovisno o stanju isLogin
     const url = isLogin.value
-      ? "http://127.0.0.1:8000/api/login"
-      : "http://127.0.0.1:8000/api/register";
+      ? "/backend/api/login"
+      : "/backend/api/register";
 
     const payload = isLogin.value
       ? { name: name.value, password: password.value } // Login šalje samo ime i pass

@@ -62,9 +62,7 @@
 
   const drawer = ref(null);
 
-  export default {
-data: () => ({ drawer: null }),
- };
+  
 </script>
 
 <style scoped>

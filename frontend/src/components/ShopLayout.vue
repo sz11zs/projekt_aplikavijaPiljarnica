@@ -103,7 +103,7 @@
   import { ref } from "vue";
   import CartDialog from "@/components/CartCard.vue";
   import ProductCardDialog from "@/components/ProductCardDialog.vue";
-  import { ProductGridItem } from "@/components/ProductGrid.vue";
+  import type { ProductGridItem } from "@/types/Product";
   import PaymentDialog from "@/components/PaymentDialog.vue";
   import CardPaymentDialog from "@/components/CardPaymentDialog.vue";
   import DeliveryAddressDialog from "@/components/DeliveryAddressDialog.vue";
@@ -144,7 +144,7 @@
     if (token) {
       try {
         // Obavještavamo backend da obriše token
-        await fetch("http://127.0.0.1:8000/api/logout", {
+        await fetch("/backend/api/logout", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -188,7 +188,7 @@
         })),
       };
 
-      const res = await fetch("http://127.0.0.1:8000/api/checkout", {
+      const res = await fetch("/backend/api/checkout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -245,7 +245,7 @@
     if (!q) return;
 
     const res = await fetch(
-      `http://localhost:8000/api/products?q=${encodeURIComponent(q)}`,
+      `/backend/api/products?q=${encodeURIComponent(q)}`,
     );
     const data = await res.json();
 
@@ -262,6 +262,7 @@
       quantity: Number(p.quantity ?? 0),
       porijeklo: p.porijeklo ?? null,
       klasa: p.klasa ?? null,
+      unit: null,
     };
 
     searchDialog.value = true;

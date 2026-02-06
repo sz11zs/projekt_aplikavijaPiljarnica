@@ -47,7 +47,7 @@
         <div class="pc-sub">
           <span class="pc-qty">1 {{ unitLabel }}</span>
           <span class="pc-price">
-            {{ formatPrice(product?.price) }} € / {{ unitLabel }}
+            {{ formatPrice(product?.price ?? undefined) }} € / {{ unitLabel }}
           </span>
         </div>
       </div>
@@ -79,20 +79,9 @@
 
 <script setup lang="ts">
   import { computed, ref } from "vue";
+  import type { ProductGridItem } from "@/types/Product";
 
   const amount = ref<number | string | null>(null);
-
-  type ProductGridItem = {
-    id: number | string;
-    name: string;
-    description: string;
-    image: string;
-    price?: number;
-    quantity?: number;
-    porijeklo?: string | null;
-    klasa?: string | null;
-    unit?: string | null; // "kg" ili "kom"
-  };
 
   const props = defineProps<{
     modelValue: boolean;
