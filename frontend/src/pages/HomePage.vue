@@ -6,17 +6,17 @@
           <v-list-item
             title="O aplikaciji"
             prepend-icon="mdi-information-outline"
-            to="/about"
+            to="/about" style="color: #455a1f"
           />
           <v-list-item
             title="Registracija/Prijava"
             prepend-icon="mdi-account"
-            to="/registracija"
+            to="/registracija" style="color: #455a1f"
           />
           <v-list-item
             title="Trgovina"
             prepend-icon="mdi-storefront-outline"
-            to="/trgovina"
+            to="/trgovina" style="color: #455a1f"
           />
         </div>
 
@@ -26,7 +26,7 @@
         <v-list-item
           title="Dashboard"
           prepend-icon="mdi-view-dashboard-outline"
-          to="/adminlogin"
+          to="/adminlogin" style="color: #455a1f"
         />
       </v-list>
     </v-navigation-drawer>
@@ -36,11 +36,6 @@
       <v-app-bar-title>
         <span class="navbar-title">Piljarnica NOVA</span>
       </v-app-bar-title>
-
-      <v-btn variant="text" color="grey" @click="logout">
-        <span>ODJAVA</span>
-        <v-icon end>mdi-exit-to-app</v-icon>
-      </v-btn>
     </v-app-bar>
 
     <v-container class="d-flex justify-center pt-16">
